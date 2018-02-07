@@ -6,6 +6,7 @@ public class Nave : MonoBehaviour {
 
     public float speed = 10;
     public Rigidbody2D rb;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -13,9 +14,12 @@ public class Nave : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float movx = Input.acceleration.x;
-        rb.transform.Translate(Vector2.right * speed * movx * Time.deltaTime);
-	}
+        if (GameController.instance.gameOver == false)
+        {
+            float movX = Input.acceleration.x;
+            rb.transform.Translate(Vector2.right * speed * movX * Time.deltaTime);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MeteoroSpawner : MonoBehaviour {
-    public GameObject meteorBrown_big4;
+    public GameObject meteorBrown_big2;
     public float spawnTime = 4f;
     public float elapsedTime = 0f;
 
@@ -24,7 +24,7 @@ public class MeteoroSpawner : MonoBehaviour {
                 else
                 {
                     float random = Random.Range(-2f, 2f);
-                    Instantiate(meteorBrown_big4, new Vector3(random, 8, 0), Quaternion.identity);
+                    Instantiate(meteorBrown_big2, new Vector3(random, 8, 0), Quaternion.identity);
                     elapsedTime = 0;
                 }
             }
